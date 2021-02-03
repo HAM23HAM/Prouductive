@@ -45,6 +45,7 @@ body {
 .nav-link {
   margin-right: 40px;
   color: white !important;
+  
 }
 
 .nav-link:hover {
@@ -72,20 +73,21 @@ body {
 }
 
 .slogan {
-  color:black;
+  color:var(--yellow) ;
   font-size: 32px;
   font-weight: bold;
 }
 
 .btn-sign {
-  border: 1px solid var(--lavender);
-  color: var(--lavender);
+  color: white;
   font-weight: bold;
   padding: 8px 15px;
   border-radius: 10px;
-  background-color: transparent;
+  background-color: var(--yellow);
   width: 160px !important;
   height: 50px;
+  outline: none;
+  border: none;
 }
 
 .btn-sign:focus {
@@ -93,9 +95,10 @@ body {
 }
 
 .btn-sign:hover {
-  background: var(--yellow);
-  color: white;
-  border: none;
+  background: white;
+  color: var(--yellow);
+  border: 1px solid var(--yellow);
+
 }
 
 .decor {
@@ -135,13 +138,13 @@ body {
   margin-right: auto;
 }
 
-#round-orange {
+/* #round-orange {
   width: 10%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: -999;
-}
+} */
 
 .footer {
   background-color: var(--darkblue);
@@ -154,18 +157,55 @@ body {
   color: white;
 }
 /* small devices (landscape phones, 576px and up) */
-@media (min-width: 300px) {
+@media (max-width: 990px){
   .slogan {
+    color: white;
+  }
+
+  .desc-text{
+    color: white;
+  }
+
+  .navbar{
+    background-color: #314ece;
+  }
+
+}
+
+@media (max-width: 300px) {
+  .slogan {
+    color: white;
     font-size: 24px;
   }
   .btn-sign {
     width: 80px;
     padding: 4px 10px;
   }
+
+  .desc-text{
+    color: white;
+  }
+
+  .navbar{
+    background-color: #314ece;
+  }
+
+
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .slogan {
+    color: white;
     font-size: 32px;
   }
+
+  .desc-text{
+    color: white;
+  }
+
+  .navbar{
+    background-color: #314ece;
+  }
+
+
 }
