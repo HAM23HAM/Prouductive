@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,17 +15,20 @@
     <script type="text/javascript" src="landing page/assets/js/jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="landing page/assets/js/wow.min.js"></script>
     <link rel="stylesheet" type="text/css" href="landing page/assets/css/animate.min.css">
-    
+
     <script>
-        $(window).scroll(function(){
+        $(window).scroll(function() {
             $('nav, a').toggleClass('scrolled', $(this).scrollTop() > 50);
         });
     </script>
 
     <title>Prouductive</title>
 </head>
+
 <body>
     <div class="wrap-container">
         <div class="container-fluid">
@@ -32,7 +36,7 @@
             <div class="row" id="menu">
                 <nav class="navbar menu navbar-expand-lg navbar-light">
                     <div class="menu-wrap d-flex container-fluid justify-content-between ">
-                        
+
                         <button class="navbar-toggler order-" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -40,7 +44,7 @@
                         <a class="navbar-brand logo m-0 d-sm-none d-md-none d-none d-lg-block" href="#menu"><img src="landing page/assets/just-logo.png"> Prouductive</a>
 
                         <div class="d-flex">
-                            <div class="menu-collapse collapse navbar-collapse" id="navbarSupportedContent" >
+                            <div class="menu-collapse collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav my-1 mx-auto">
                                     <li class="nav-item">
                                         <a class="nav-link active" aria-current="page" href="#menu">Home</a>
@@ -52,30 +56,30 @@
                                         <a class="nav-link" href="#about">About us</a>
                                     </li>
                                     @if (Route::has('login'))
-                                        @auth
-                                        @else
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('login') }}">Sign in</a>
-                                            </li>
-                                        @endif
+                                    @auth
+                                    @else
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">Sign in</a>
+                                    </li>
+                                    @endif
                                     @endif
                                 </ul>
-                            @if (Route::has('login'))
+                                @if (Route::has('login'))
                                 @auth
-                                    <a href="{{ url('/dashboard') }}">
-                                        <button type="button" class="btn-nav">Dashboard</button>
-                                    </a>
+                                <a href="{{ url('/dashboard') }}">
+                                    <button type="button" class="btn-nav">Dashboard</button>
+                                </a>
                                 @elseif (Route::has('register'))
-                                    <a href="{{ route('register') }}">
-                                        <button type="button" class="btn-nav">Get Started</button>
-                                    </a>
+                                <a href="{{ route('register') }}">
+                                    <button type="button" class="btn-nav">Get Started</button>
+                                </a>
                                 @endif
-                            @endif
-                            </div> 
+                                @endif
+                            </div>
                         </div>
-                        
+
                     </div>
-                  </nav>
+                </nav>
             </div>
         </div>
 
@@ -85,21 +89,22 @@
             <!-- HERO -->
             <div class="container-content py-5">
                 <div class="row mx-5 my-5" id="hero">
-                    <div class="col-12 col-lg-6 col-md-12 col-sm-12 text-lg-start text-md-center text-sm-center text-center my-auto
-                                mx-auto wow fadeInLeft">
-                                <p class="slogan">Achieve your goals
-                                    <br>
-                                    Proud to be productive.
-                                </p>
-                                <p> We are more than just a todo list. We help you reach resolutions 
-                                    <br>
-                                    and increase productivity. Here you can organize your goals,
-                                    <br>
-                                    set your own rewards and track your progress in order to be 
-                                    <br>
-                                    productive and happy at the same time.
-                                </p>
-                        
+                    <div class="col-12 col-lg-6 col-md-12 col-sm-12 text-lg-start text-md-center text-sm-center text-center my-auto mx-auto wow fadeInLeft">
+                        <p class="slogan">
+                            Achieve your goals
+                            <br>
+                            Proud to be productive.
+                        </p>
+                        <p class="desc-text">
+                            We are more than just a todo list. We help you reach resolutions
+                            <br>
+                            and increase productivity. Here you can organize your goals,
+                            <br>
+                            set your own rewards and track your progress in order to be
+                            <br>
+                            productive and happy at the same time.
+                        </p>
+
                         <div class="text">
                             <a href="{{ route('register') }}">
                                 <button type="button" class="btn-sign mt-3 mb-3">Get Started</button>
@@ -118,23 +123,23 @@
                 <!-- row -->
                 <div class="row justify-content-center mt-5">
                     <div class="col-12 text-center">
-                        <p class="pwhy ms-5 mb-1 wow zoomIn">
+                        <p class="pwhy mb-1 wow zoomIn">
                             Why Us Suit For You
                         </p>
                     </div>
                 </div>
                 <!-- row -->
                 <!-- row -->
-				<div class="row mb-5">
+                <div class="row mb-5">
                     <!-- col -->
-					<div class="col-12 col-md-6 mt-4 pt-2">
-						<div class="sticky-bar wow fadeInLeft">
-							<img src="landing page/assets/laptop-ilus.png" width="90%">
-						</div>
+                    <div class="col-12 col-md-6 mt-4 pt-2">
+                        <div class="sticky-bar wow fadeInLeft">
+                            <img src="landing page/assets/laptop-ilus.png" width="90%">
+                        </div>
                     </div>
                     <!-- col-->
                     <!-- col -->
-					<div class="col-12 col-lg-6 col-md-12 col-sm-12 my-auto wow fadeInRight">
+                    <div class="col-12 col-lg-6 col-md-12 col-sm-12 my-auto wow fadeInRight">
                         <div class="d-flex">
                             <div class="number-box my-2 me-3 text-center"> 1 </div>
                             <div>
@@ -153,7 +158,7 @@
                             <div class="number-box my-2 me-3 text-center"> 2 </div>
                             <div>
                                 <h4 class="h3why fw-bold">
-                                    Give yourself  special gift
+                                    Give yourself special gift
                                 </h4>
                                 <p class="text-muted">
                                     a reward feauture for you after completing <br>
@@ -182,7 +187,7 @@
                                     Customized task
                                 </h4>
                                 <p class="text-muted">
-                                    Be yourself and express your style  with <br>
+                                    Be yourself and express your style with <br>
                                     customized task
                                 </p>
                             </div>
@@ -191,17 +196,16 @@
                     <!-- col -->
                 </div>
                 <!-- row -->
-			</div>
-            
+            </div>
+
             <!-- About us -->
-            <div class="row position-relative" id="about" style="padding-bottom: 100px;">
-                <div class="position-relative mb-4">
-                    <img src="landing page/assets/round.png" id="round-orange">
+            <div class="row" id="about" style="padding-bottom: 100px;">
+                <div class=" mb-3">
                     <p style="font-size: 50px; font-weight: bold; color: var(--lavender);" class="ms-5 mb-5 mt-3 wow zoomIn">
                         About us
                     </p>
                 </div>
-                
+
                 <div class="col-6 text-center wow zoomIn" data-wow-delay="0.5s">
                     <p style="color: var(--blue); font-weight: bold; font-size: 24px;">
                         Front<span style="color: var(--yellow)">end dev</span>
@@ -221,13 +225,13 @@
                 <div class="col-3 text-center wow fadeInUp" data-wow-delay="1.5s">
                     <img src="landing page/assets/helmy.png" alt="Helmy Zakiudin" width="60%" class="dev-ava">
                     <span style="font-weight: bold; color: var(--blue);">
-                        Helmy Zakiudin    
+                        Helmy Zakiudin
                     </span>
                 </div>
                 <div class="col-3 text-center wow fadeInUp" data-wow-delay="2s">
                     <img src="landing page/assets/ilham.png" alt="Muhammad Ilham" width="60%" class="dev-ava">
                     <span style="font-weight: bold; color: var(--blue);">
-                        Muhammad Ilham   
+                        Muhammad Ilham
                     </span>
                 </div>
                 <div class="col-3 text-center wow fadeInUp" data-wow-delay="2.5s">
@@ -257,7 +261,7 @@
                     </div>
                 </div>
             </footer>
-        </div>  
+        </div>
     </div>
 
     <script>
@@ -266,28 +270,28 @@
 
         $(document).ready(function() {
             $('.menu .menu-wrap .menu-collapse ul li a').click(function(e) {
-                
+
                 var targetHref = $(this).attr('href');
-                
+
                 $('html, body').animate({
                     scrollTop: $(targetHref).offset().top
                 }, 50);
-                
+
                 e.preventDefault();
             });
 
 
-            $('.nav-item .nav-link').click(function(event){
+            $('.nav-item .nav-link').click(function(event) {
                 $('.nav-link').removeClass('active');
                 $(this).addClass('active');
             });
-            
+
 
 
 
         });
 
-
+        
     </script>
-    
+
 </body>
