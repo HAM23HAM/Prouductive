@@ -3,6 +3,9 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\TodoController;
+use App\Http\Livewire\CreateTask;
+use App\Models\Todo;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +21,15 @@ use App\Http\Controllers\LandingController;
 Route::get('/', [LandingController::class, 'index']);
 Route::view('/index', "frontend.index")->name('index.view');
 
-Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
+Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
     Route::view('/dashboard', "dashboard")->name('dashboard');
 
     Route::get('/user', [ UserController::class, "index_view" ])->name('user');
     Route::view('/user/new', "pages.user.user-new")->name('user.new');
     Route::view('/user/edit/{userId}', "pages.user.user-edit")->name('user.edit');
+
+    Route::get('todos', CreateTask::class)->name('todos'); 
+
 });
+
+Route::resource('todo', TodoController::class)->middleware('auth:sanctum');

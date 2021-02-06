@@ -18,6 +18,19 @@ $links = [
         "text" => "User",
         "is_multi" => true,
     ],
+    [
+        "href" => [
+            [
+                "section_text" => "To Do",
+                "section_list" => [
+                    ["href" => "todos", "text" => "Buat Tugas"],
+                    ["href" => "todos", "text" => "Buat Kebiasaan"]
+                ]
+            ]
+        ],
+        "text" => "To Do",
+        "is_multi" => true,
+    ],
 ];
 $navigation_links = array_to_object($links);
 @endphp
@@ -28,7 +41,7 @@ $navigation_links = array_to_object($links);
             <a href="{{ route('index.view') }}">Prouductive</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ route('dashboard') }}">
+            <a href="{{ route('index.view') }}">
                 <img class="d-inline-block" width="32px" height="30.61px" src="landing page/assets/just-logo.png" alt="logo-productive">
             </a>
         </div>
