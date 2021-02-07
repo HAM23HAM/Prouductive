@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use Livewire\Livewire;
 
 class TodoController extends Controller
 {
@@ -15,8 +16,13 @@ class TodoController extends Controller
     public function index()
     {
         $todos = Todo::all();
-        return view('livewire.create-task', [
+        return view('Livewire.task', [
             'todos' => $todos
+        ]);
+
+        $newtodos = Todo::all();
+        return view('livewire.create.task', [
+            'newtodos' => $newtodos
         ]);
     }
 

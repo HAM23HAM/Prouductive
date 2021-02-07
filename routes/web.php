@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\TodoController;
 use App\Http\Livewire\CreateTask;
+use App\Http\Livewire\Task;
 use App\Models\Todo;
 
 /*
@@ -28,7 +29,8 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
     Route::view('/user/new', "pages.user.user-new")->name('user.new');
     Route::view('/user/edit/{userId}', "pages.user.user-edit")->name('user.edit');
 
-    Route::get('todos', CreateTask::class)->name('todos'); 
+    Route::get('todos', Task::class)->name('todos');
+    Route::get('newtodos', CreateTask::class)->name('newtodos');
 
 });
 
