@@ -1,14 +1,14 @@
 <x-slot name="header_content">
-    <h1>{{ __('Buat Tugas Baru') }}</h1>
+    <h1>{{ __('Daftar Tugas') }}</h1>
 
     <div class="section-header-breadcrumb">
     <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
         <div class="breadcrumb-item"><a href="#">Tugas</a></div>
-        <div class="breadcrumb-item"><a href="{{ route('user') }}">Buat Tugas Baru</a></div>
+        <div class="breadcrumb-item"><a href="{{ route('newtodos') }}">Daftar Tugas</a></div>
     </div>
 </x-slot>
 
-<div class="py-12">
+<div class="pt-3 pb-5">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
             @if (session()->has('message'))
@@ -20,9 +20,7 @@
                     </div>
                 </div>
             @endif
-
-            <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Tambah Tugas</button>
-
+            
             <table class="table-fixed w-full">
                 <thead>
                     <tr class="bg-gray-100 text-center">

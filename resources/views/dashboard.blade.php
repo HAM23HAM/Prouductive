@@ -6,7 +6,6 @@
         </div>
     </x-slot>
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-        <x-jet-welcome/>
         <livewire:task/>
     </div>
 </x-app-layout>

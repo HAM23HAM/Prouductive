@@ -23,8 +23,8 @@ $links = [
             [
                 "section_text" => "To Do",
                 "section_list" => [
-                    ["href" => "newtodos", "text" => "Buat Tugas"],
-                    ["href" => "newtodos", "text" => "Buat Kebiasaan"]
+                    ["href" => "newtodos", "text" => "Daftar Tugas"],
+                    ["href" => "newtodos", "text" => "Daftar Kebiasaan"]
                 ]
             ]
         ],

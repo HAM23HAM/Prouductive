@@ -14,4 +14,5 @@ class CreateTask extends Component
         $this->createtask = Todo::orderBy('created_at', 'DESC')->get();
         return view('livewire.create-task');
     }
+
 }
