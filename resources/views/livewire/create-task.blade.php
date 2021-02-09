@@ -1,10 +1,10 @@
 <x-slot name="header_content">
-    <h1>{{ __('Daftar Tugas') }}</h1>
+    <h1>{{ __('Buat Tugas Baru') }}</h1>
 
     <div class="section-header-breadcrumb">
     <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
         <div class="breadcrumb-item"><a href="#">Tugas</a></div>
-        <div class="breadcrumb-item"><a href="{{ route('newtodos') }}">Daftar Tugas</a></div>
+        <div class="breadcrumb-item"><a href="{{ route('newtodos') }}">Buat Tugas Baru</a></div>
     </div>
 </x-slot>
 

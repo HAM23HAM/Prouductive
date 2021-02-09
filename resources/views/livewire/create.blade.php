@@ -11,21 +11,29 @@
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                     <div class="">
                         <div class="mb-4">
-                            <label for="forTaskname" class="block text-gray-700 text-sm font-bold mb-2">Nama Tugas:</label>
+                            <label for="forTaskname" class="block text-gray-700 text-sm font-bold mb-2">Add your task here</label>
                             <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="forTaskname" wire:model="taskname">
                             @error('taskname')
                                 <span class="text-red-500">{{ $message }}</span>
                             @enderror
                         </div>
+                        
+                        <!-- date picker -->
+
                         <div class="mb-4">
-                            <label for="forDescription" class="block text-gray-700 text-sm font-bold mb-2">Deskripsi:</label>
+                            <label for="forDescription" class="block text-gray-700 text-sm font-bold mb-2">Describe your task here</label>
                             <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="forDescription" wire:model="description"></textarea>
                             @error('description') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                         <div class="mb-4">
-                            <label for="forReward" class="block text-gray-700 text-sm font-bold mb-2">Reward:</label>
+                            <label for="forReward" class="block text-gray-700 text-sm font-bold mb-2">Set your own reward here</label>
                             <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="forReward" wire:model="reward">
                             @error('reward') <span class="text-red-500">{{ $message }}</span>@enderror
+                        </div>
+                        <div class="mb-4">
+                            <label for="forStep" class="block text-gray-700 text-sm font-bold mb-2">Add step here</label>
+                            <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="forStep" wire:model="step">
+                            @error('step') <span class="text-red-500">{{ $message }}</span>@enderror
                         </div>
                     </div>
                 </div>
@@ -41,6 +49,7 @@
                         Cancel
                         </button>
                     </span>
+                </div>
                 </form>
             </div>
         </div>

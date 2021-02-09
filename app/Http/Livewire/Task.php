@@ -65,7 +65,7 @@ class Task extends Component
             ]
         );
 
-        session()->flash('message', $this->taskname_id ? $this->taskname . ' Diperbaharui':$this->taskname . ' Ditambahkan');
+        session()->flash('message', $this->taskname_id ? $this->taskname . ' Diperbaharui': 'Tugas baru ditambahkan');
         $this->closeModal();
         $this->resetFields();
     }
