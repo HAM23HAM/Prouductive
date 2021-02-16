@@ -17,6 +17,7 @@ class CreateTodosTable extends Migration
             $table->id();
             $table->string('task');
             $table->string('description');
+            $table->dateTime('datentime');
             $table->string('reward');
             $table->string('step');
             $table->timestamps();

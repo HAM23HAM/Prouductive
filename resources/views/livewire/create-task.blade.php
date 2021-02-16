@@ -1,5 +1,5 @@
 <x-slot name="header_content">
-    <h1>{{ __('Buat Tugas Baru') }}</h1>
+    <h1>{{ __('To Do') }}</h1>
 
     <div class="section-header-breadcrumb">
     <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
@@ -7,49 +7,65 @@
         <div class="breadcrumb-item"><a href="{{ route('newtodos') }}">Buat Tugas Baru</a></div>
     </div>
 </x-slot>
-
-<div class="pt-3 pb-5">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
+<div class="mt-4 sm:px-10 bg-white">
+    <div class="wrap-container overflow: hidden; mb-4 p-3">
+        <div class="container">
+            <h2 class="section-title">Add a New Task</h2>
+            <p class="section-lead">
+              Start your resolution from here
+            </p>
             @if (session()->has('message'))
-                <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
-                    <div class="flex">
-                        <div>
-                            <p class="text-sm">{{ session('message') }}</p>
+            <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
+                <div class="flex">
+                    <div>
+                        <p class="text-sm">{{ session('message') }}</p>
+                    </div>
+                </div>
+            </div>
+            @endif
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="forTaskname" class="block text-gray-700 text-sm font-bold mb-2">Add your task</label>
+                                <input type="text" class="form-control" id="forTaskname" wire:model="taskname">
+                                @error('taskname')
+                                    <span class="text-red-500">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="forDescription" class="block text-gray-700 text-sm font-bold mb-2">Describe your task</label>
+                                <textarea class="form-control" id="forDescription" wire:model="description"></textarea>
+                                @error('description') <span class="text-red-500">{{ $message }}</span>@enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="forDatentime" class="block text-gray-700 text-sm font-bold mb-2">Set your deadline</label>
+                                <input type="datetime-local" class="form-control" id="forDatentime" wire:model="datentime">
+                            </div>
+                            <div class="form-group">
+                                <label for="forReward" class="block text-gray-700 text-sm font-bold mb-2">Set your own reward</label>
+                                    <input type="text" class="form-control" id="forReward" wire:model="reward">
+                                    @error('reward')
+                                        <span class="text-red-500">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="forStep" class="block text-gray-700 text-sm font-bold mb-2">Make some step to complete your task</label>
+                                    <input type="text" class="form-control" id="forStep" wire:model="step">
+                                    @error('step')
+                                        <span class="text-red-500">{{ $message }}</span>
+                                    @enderror
+                            </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button wire:click="store()" class="btn btn-primary mr-1" type="submit">Submit</button>
+                            <button wire:click="resetFields()" class="btn btn-danger" type="reset">Reset</button>
                         </div>
                     </div>
                 </div>
-            @endif
-            
-            <table class="table-fixed w-full">
-                <thead>
-                    <tr class="bg-gray-100 text-center">
-                        <th class="border px-4 py-2" width="20%">Task</th>
-                        <th class="border px-4 py-2" width="30%">Description</th>
-                        <th class="border px-4 py-2" width="15%">Reward</th>
-                        <th class="border px-4 py-2" width="25%">Step</th>
-                        <th class="border px-4 py-2" width="20%">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse($createtask as $row)
-                        <tr>
-                            <td class="border px-4 py-2">{{ $row->task }}</td>
-                            <td class="border px-4 py-2">{{ $row->description }}</td>
-                            <td class="border px-4 py-2">{{ $row->reward }}</td>
-                            <td class="border px-4 py-2">{{ $row->step }}</td>
-                            <td class="border px-4 py-2 text-center">
-                                <button wire:click="edit({{ $row->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Edit</button>
-                                <button wire:click="delete({{ $row->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">Hapus</button>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td class="border px-4 py-2 text-center" colspan="5">Tidak ada data</td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
+            </div>
         </div>
     </div>
-</div>
+    
+</div>  

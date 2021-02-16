@@ -119,10 +119,10 @@
             <!-- HERO -->
 
             <!-- WHY US -->
-            <div class="container py-5 mb-5" id="why">
+            <div class="container py-5" id="why">
                 <!-- row -->
                 <div class="row justify-content-center mt-5">
-                    <div class="col-12 text-center">
+                    <div class="col-12 text-center mt-5">
                         <p class="pwhy mb-1 wow zoomIn">
                             Why Us Suit For You
                         </p>
@@ -134,7 +134,7 @@
                     <!-- col -->
                     <div class="col-12 col-md-6 mt-4 pt-2">
                         <div class="sticky-bar wow fadeInLeft">
-                            <img src="landing page/assets/laptop-ilus.png" width="90%">
+                            <img src="landing page/assets/dashboard.png" width="100%">
                         </div>
                     </div>
                     <!-- col-->
@@ -229,7 +229,7 @@
                     </span>
                 </div>
                 <div class="col-3 text-center wow fadeInUp" data-wow-delay="2s">
-                    <img src="landing page/assets/ilham.png" alt="Muhammad Ilham" width="60%" class="dev-ava">
+                    <img src="landing page/assets/ilhambaru.png" alt="Muhammad Ilham" width="60%" class="dev-ava">
                     <span style="font-weight: bold; color: var(--blue);">
                         Muhammad Ilham
                     </span>

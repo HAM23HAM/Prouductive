@@ -7,7 +7,7 @@ use App\Models\Todo;
 
 class Task extends Component
 {
-    public $task, $taskname, $description, $reward, $step, $taskname_id;
+    public $task, $taskname, $description, $datentime, $reward, $step, $taskname_id;
     public $isModal;
 
     public function render()
@@ -16,23 +16,30 @@ class Task extends Component
         return view('livewire.task');
     }
 
-    public function create()
+    public function delete()
     {
-        $this->resetFields();
-        $this->openModal();
+        Todo::destroy(
+            ['id' => $this->taskname_id],
+            [
+                'task' => $this->taskname,
+                'description' => $this->description,
+                'datentime' => $this->datentime,
+                'reward' => $this->reward,
+                'step' => $this->step,
+            ]
+            );
     }
 
-    public function resetFields()
+    public function detail($id)
     {
-        $this->taskname = '';
-        $this->description = '';
-        $this->reward = '';
-        $this->step = '';
-        $this->taskname_id = '';
-    }
+        $task = Todo::find($id);
+        $this->taskname_id = $id;
+        $this->taskname = $task->task;
+        $this->description = $task->description;
+        $this->datentime = $task->datentime;
+        $this->reward = $task->reward;
+        $this->step = $task->step;
 
-    public function detail()
-    {
         $this->openModal();
     }
 
@@ -46,27 +53,4 @@ class Task extends Component
         $this->isModal = false;
     }
 
-    public function store()
-    {
-        $this->validate([
-            'taskname' => 'required|string',
-            'description' => 'required|string',
-            'reward' => 'required|string',
-            'step' => 'required|string',
-        ]);
-
-        Todo::updateOrCreate(
-            ['id' => $this->taskname_id],
-            [
-                'task' => $this->taskname,
-                'description' => $this->description,
-                'reward' => $this->reward,
-                'step' => $this->step,
-            ]
-        );
-
-        session()->flash('message', $this->taskname_id ? $this->taskname . ' Diperbaharui': 'Tugas baru ditambahkan');
-        $this->closeModal();
-        $this->resetFields();
-    }
 }

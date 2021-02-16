@@ -8,23 +8,10 @@ $links = [
     [
         "href" => [
             [
-                "section_text" => "User",
-                "section_list" => [
-                    ["href" => "user", "text" => "Data User"],
-                    ["href" => "user.new", "text" => "Buat User"]
-                ]
-            ]
-        ],
-        "text" => "User",
-        "is_multi" => true,
-    ],
-    [
-        "href" => [
-            [
                 "section_text" => "To Do",
                 "section_list" => [
-                    ["href" => "newtodos", "text" => "Buat Tugas Baru"],
-                    ["href" => "newtodos", "text" => "Buat Kebiasaan Baru"]
+                    ["href" => "newtodos", "text" => "Add a New Task"],
+                    ["href" => "newtodos", "text" => "Add a New Habit"]
                 ]
             ]
         ],
@@ -34,6 +21,21 @@ $links = [
 ];
 $navigation_links = array_to_object($links);
 @endphp
+
+    <!-- sidebar untuk menampilkan user -->
+    <!-- [
+        "href" => [
+            [
+                "section_text" => "User",
+                "section_list" => [
+                    ["href" => "user", "text" => "Data User"],
+                    ["href" => "user.new", "text" => "Buat User"]
+                ]
+            ]
+        ],
+        "text" => "User",
+        "is_multi" => true,
+    ], -->
 
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
