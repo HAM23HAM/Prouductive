@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\TodoController;
+use App\Http\Livewire\CreateHabit;
 use App\Http\Livewire\CreateTask;
 use App\Http\Livewire\Task;
 use App\Models\Todo;
@@ -31,6 +32,7 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified']], function() {
 
     Route::get('todos', Task::class)->name('todos');
     Route::get('newtodos', CreateTask::class)->name('newtodos');
+    Route::get('newhabittodos', CreateHabit::class)->name('newhabittodos');
 
 });
 

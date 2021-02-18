@@ -11,12 +11,21 @@
             </a>
         </div>
         <div class="flex">
-            <a href="{{ route ('newtodos')}}" class="-ml- btn btn-primary shadow-none">
+            <a href="{{ route ('newhabittodos')}}" class="-ml- btn btn-primary shadow-none">
                 <span class="fas fa-plus"> </span>
                 Create a New Habit
             </a>
         </div>
     </div>
+    @if (session()->has('message'))
+    <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
+        <div class="flex">
+            <div>
+                <p class="text-sm">{{ session('message') }}</p>
+            </div>
+        </div>
+    </div>
+    @endif
     <div class="wrap-container overflow: hidden; mb-4">
         <div class="container">
         @forelse($task as $row)
@@ -25,16 +34,16 @@
                 <div class="col-lg-8">
                     <div class="card ml-3 mt-2 mb-6" id="card-item" style="border-radius: 20px !important; box-shadow: 0px 5px 10px #6777EF; width: 800px;">
                         <div class="card-body d-flex">
-                            <div class="col-lg-9">
+                            <div class="col-lg-10">
                                 <h3 class="title text-2xl font-bold mb-1" style="color:#6777EF;"> {{ $row->task }}</h3>
                                 <table>
                                     <tr>
-                                        <th style="font-size: 16px;">Reward </th>
-                                        <td style="font-size: 16px; font-weight:bold">&nbsp;:&nbsp; {{ $row->reward }}</td>
-                                    </tr>
-                                    <tr>
                                         <th style="font-size: 16px;">Deadline </th>
                                         <td style="font-size: 16px; font-weight:bold;">&nbsp;:&nbsp; <span style="color: #FC544B;">{{ $row->datentime }}</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th style="font-size: 16px;">Reward </th>
+                                        <td style="font-size: 16px; font-weight:bold">&nbsp;:&nbsp; {{ $row->reward }}</td>
                                     </tr>
                                     <tr>
                                         <th style="font-size: 16px;">Next step </th>
@@ -46,22 +55,20 @@
                                 </div>
                             </div>
 
-                            <div class="col-lg-2">
-                                <button wire:click="delete()" type="button" style="position: absolute; bottom: 0;" 
-                                        class="-ml- btn btn-primary shadow-none py-2 px-3">
-                                    Selesai
+                            <div class="col-lg-1">
+                                <button wire:click="complete({{ $row->id }})" type="button" style="position: absolute; bottom: 0;" class="-ml- btn btn-primary">
+                                    <span class="fas fa-check"> </span>
                                 </button>
                             </div>
 
                             <!-- trigger modal -->
                             <div class="col-lg-1">
-                                <button wire:click="detail({{ $row->id }})" type="button" style="position: absolute; bottom: 0; right: 0;" 
-                                        class="-ml- btn btn-primary shadow-none py-2 px-3">
-                                    Detail
+                                <button wire:click="detail({{ $row->id }})" type="button" style="position: absolute; bottom: 0;" class="-ml- btn btn-primary">
+                                    <span class="fas fa-expand"> </span>
                                 </button>
                             </div>
                             @if ($isModal)
-                                @include('livewire.expand')
+                                @include('livewire.detail')
                             @endif
                         </div>
                     </div>

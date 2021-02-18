@@ -24,6 +24,11 @@ class TodoController extends Controller
         return view('livewire.create.task', [
             'newtodos' => $newtodos
         ]);
+
+        $newhabittodos = Todo::all();
+        return view('livewire.create.habit', [
+            'newhabittodos' => $newhabittodos
+        ]);
     }
 
     /**

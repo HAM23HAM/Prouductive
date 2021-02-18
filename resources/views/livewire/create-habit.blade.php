@@ -4,15 +4,15 @@
     <div class="section-header-breadcrumb">
     <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
         <div class="breadcrumb-item"><a href="#">To Do</a></div>
-        <div class="breadcrumb-item"><a href="{{ route('newtodos') }}">Create a New Task</a></div>
+        <div class="breadcrumb-item"><a href="{{ route('newtodos') }}">Create a New Habit</a></div>
     </div>
 </x-slot>
 <div class="mt-4 sm:px-10 bg-white">
     <div class="wrap-container overflow: hidden; mb-4 p-3">
         <div class="container">
-            <h2 class="section-title">Add a New Task</h2>
+            <h2 class="section-title">Add a New Habit</h2>
             <p class="section-lead">
-              Start your resolution from here
+              Start your 21 days habits from here
             </p>
             @if (session()->has('message'))
             <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
@@ -28,7 +28,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="forTaskname" class="block text-gray-700 text-sm font-bold mb-2">Add your task</label>
+                                <label for="forTaskname" class="block text-gray-700 text-sm font-bold mb-2">Add your habit</label>
                                 <input type="text" class="form-control" id="forTaskname" wire:model="taskname">
                                 @error('taskname')
                                     <span class="text-red-500">{{ $message }}</span>
@@ -37,16 +37,12 @@
                             <div class="row">
                                 <div class="col-lg-9">
                                     <div class="form-group">
-                                        <label for="forDescription" class="block text-gray-700 text-sm font-bold mb-2">Describe your task</label>
+                                        <label for="forDescription" class="block text-gray-700 text-sm font-bold mb-2">Describe your habit</label>
                                         <textarea class="form-control" id="forDescription" wire:model="description"></textarea>
                                         @error('description') <span class="text-red-500">{{ $message }}</span>@enderror
                                     </div>
                                 </div>
                                 <div class="col-lg-3">
-                                    <div class="form-group">
-                                        <label for="forDatentime" class="block text-gray-700 text-sm font-bold mb-2">Set your deadline</label>
-                                        <input type="datetime-local" class="form-control" id="forDatentime" wire:model="datentime">
-                                    </div>  
                                 </div>
                             </div>
                             <div class="form-group">
@@ -57,7 +53,7 @@
                                     @enderror
                             </div>
                             <div class="form-group">
-                                <label for="forStep" class="block text-gray-700 text-sm font-bold mb-2">Make some step to complete your task</label>
+                                <label for="forStep" class="block text-gray-700 text-sm font-bold mb-2">Make some step to achive new habit</label>
                                     <input type="text" class="form-control" id="forStep" wire:model="step">
                                     @error('step')
                                         <span class="text-red-500">{{ $message }}</span>

@@ -4,41 +4,45 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Todo;
+use Carbon\Carbon;
 
 class Task extends Component
 {
-    public $task, $taskname, $description, $datentime, $reward, $step, $taskname_id;
+    public $task, $taskname, $description, $datentime, $reward, $step, $taskname_id, $created_at, $today;
     public $isModal;
 
     public function render()
     {
         $this->task = Todo::orderBy('created_at', 'DESC')->get();
+        $this->today = Carbon::now();
         return view('livewire.task');
     }
 
-    public function delete()
+    public function complete($id)
     {
-        Todo::destroy(
-            ['id' => $this->taskname_id],
-            [
-                'task' => $this->taskname,
-                'description' => $this->description,
-                'datentime' => $this->datentime,
-                'reward' => $this->reward,
-                'step' => $this->step,
-            ]
-            );
+        $task = Todo::find($id);
+        $task->delete();
+        session()->flash('message', $this->taskname . 'task was completed');
+    }
+
+    public function delete($id)
+    {
+        $task = Todo::find($id);
+        $task->delete();
+        session()->flash('message', $this->taskname . 'task was deleted');
     }
 
     public function detail($id)
     {
         $task = Todo::find($id);
         $this->taskname_id = $id;
+        $this->created_at = $task->created_at;
         $this->taskname = $task->task;
         $this->description = $task->description;
         $this->datentime = $task->datentime;
         $this->reward = $task->reward;
         $this->step = $task->step;
+        
 
         $this->openModal();
     }
