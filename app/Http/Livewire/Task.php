@@ -8,13 +8,14 @@ use Carbon\Carbon;
 
 class Task extends Component
 {
-    public $task, $taskname, $description, $datentime, $reward, $step, $taskname_id, $created_at, $today;
+    public $task, $taskname, $description, $datentime, $reward, $step, $taskname_id, $created_at, $today, $duedate;
     public $isModal;
 
     public function render()
     {
         $this->task = Todo::orderBy('created_at', 'DESC')->get();
         $this->today = Carbon::now();
+        $this->duedate = Carbon::parse($this->datentime)->diffForHumans();
         return view('livewire.task');
     }
 
@@ -22,14 +23,14 @@ class Task extends Component
     {
         $task = Todo::find($id);
         $task->delete();
-        session()->flash('message', $this->taskname . 'task was completed');
+        session()->flash('message', $this->taskname . 'task completed');
     }
 
     public function delete($id)
     {
         $task = Todo::find($id);
         $task->delete();
-        session()->flash('message', $this->taskname . 'task was deleted');
+        session()->flash('message', $this->taskname . 'task deleted');
     }
 
     public function detail($id)

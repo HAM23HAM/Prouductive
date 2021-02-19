@@ -7,13 +7,13 @@
         <div class="flex mx-3">
             <a href="{{ route('newtodos') }}" class="-ml- btn btn-primary shadow-none">
                 <span class="fas fa-plus"> </span>
-                Create a New Task
+                Create New Task
             </a>
         </div>
         <div class="flex">
             <a href="{{ route ('newhabittodos')}}" class="-ml- btn btn-primary shadow-none">
                 <span class="fas fa-plus"> </span>
-                Create a New Habit
+                Create New Habit
             </a>
         </div>
     </div>
@@ -39,16 +39,18 @@
                                 <table>
                                     <tr>
                                         <th style="font-size: 16px;">Deadline </th>
-                                        <td style="font-size: 16px; font-weight:bold;">&nbsp;:&nbsp; <span style="color: #FC544B;">{{ $row->datentime }}</span></td>
+                                        <td style="font-size: 16px; font-weight:bold">&nbsp;:&nbsp;
+                                            <span style="color: #FC544B;">{{ Carbon\Carbon::parse( $row->datentime )->diffForHumans() }}</span>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th style="font-size: 16px;">Reward </th>
                                         <td style="font-size: 16px; font-weight:bold">&nbsp;:&nbsp; {{ $row->reward }}</td>
                                     </tr>
-                                    <tr>
+                                    <!-- <tr>
                                         <th style="font-size: 16px;">Next step </th>
                                         <td style="font-size: 16px; font-weight:bold;">&nbsp;:&nbsp; <span style="color: #FFBD55;">{{ $row->step }}</span></td>
-                                    </tr>
+                                    </tr> -->
                                 </table>
                                 <div class="progress mt-2" style="width: 100%;">
                                     <div class="progress-bar" role="progressbar" style="width: 50%; background-color: #FFBD55;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> 

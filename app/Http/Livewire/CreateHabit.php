@@ -35,7 +35,6 @@ class CreateHabit extends Component
             'taskname' => 'required|string',
             'description' => 'required|string',
             'reward' => 'required|string',
-            'step' => 'required|string',
         ]);
 
         Todo::updateOrCreate(

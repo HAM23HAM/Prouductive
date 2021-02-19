@@ -10,8 +10,8 @@ $links = [
             [
                 "section_text" => "To Do",
                 "section_list" => [
-                    ["href" => "newtodos", "text" => "Add a New Task"],
-                    ["href" => "newhabittodos", "text" => "Add a New Habit"]
+                    ["href" => "newtodos", "text" => "Task"],
+                    ["href" => "newhabittodos", "text" => "21 Days Habit"]
                 ]
             ]
         ],

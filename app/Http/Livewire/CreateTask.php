@@ -37,7 +37,6 @@ class CreateTask extends Component
             'description' => 'required|string',
             'datentime' => 'required',
             'reward' => 'required|string',
-            'step' => 'required|string',
         ]);
 
         Todo::updateOrCreate(
@@ -51,7 +50,7 @@ class CreateTask extends Component
             ]
         );
 
-        session()->flash('message', $this->taskname_id ? $this->taskname . ' Updated': 'New Task Added');
+        session()->flash('message', $this->taskname_id ? $this->taskname . ' Task updated': 'New task added');
         $this->resetFields();
     }
 

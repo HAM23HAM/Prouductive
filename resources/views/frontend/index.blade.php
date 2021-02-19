@@ -123,7 +123,7 @@
                 <!-- row -->
                 <div class="row justify-content-center mt-5">
                     <div class="col-12 text-center mt-5">
-                        <p class="pwhy mb-1 wow zoomIn">
+                        <p class="pwhy wow zoomIn">
                             Why Us Suit For You
                         </p>
                     </div>
@@ -132,7 +132,7 @@
                 <!-- row -->
                 <div class="row mb-5">
                     <!-- col -->
-                    <div class="col-12 col-md-6 mt-4 pt-2">
+                    <div class="col-12 col-md-6 mt-4 pt-2 my-auto">
                         <div class="sticky-bar wow fadeInLeft">
                             <img src="landing page/assets/dashboard.png" width="100%">
                         </div>
@@ -144,14 +144,12 @@
                             <div class="number-box my-2 me-3 text-center"> 1 </div>
                             <div>
                                 <h4 class="fw-bold">
-                                    A new way to manage your goals
+                                    A new way to reach your goals
                                 </h4>
                                 <p class="text-muted">
-                                    keep track with your progress <br>
-                                    and help remind you with your goals
+                                    keep track with your progress and help remind you with your goals
                                 </p>
                             </div>
-
                         </div>
 
                         <div class="d-flex">
@@ -161,8 +159,7 @@
                                     Give yourself special gift
                                 </h4>
                                 <p class="text-muted">
-                                    a reward feauture for you after completing <br>
-                                    some task to bring motivation to do more
+                                    a reward feature for you after completing some task
                                 </p>
                             </div>
                         </div>
@@ -174,8 +171,7 @@
                                     Create a new habit
                                 </h4>
                                 <p class="text-muted">
-                                    21 days habits track for achieve new habits <br>
-                                    <span id="ppp">ppp</span>
+                                    21 days habits track to achieve new habits <br>
                                 </p>
                             </div>
                         </div>
@@ -187,8 +183,7 @@
                                     Customized task
                                 </h4>
                                 <p class="text-muted">
-                                    Be yourself and express your style with <br>
-                                    customized task
+                                    Be yourself and express your style with customized task
                                 </p>
                             </div>
                         </div>

@@ -15,9 +15,6 @@
                     <hr>
                     <div class="modal-body">
                         <P> {{ $description }} </P>
-                        <h4 class="text-2xl text-red-500">
-                            {{ Carbon\Carbon::parse($datentime)->diffInDays($today) }} days left
-                        </h4>
                         <table>
                             <tr>
                                 <th style="font-size: 14px;">Deadline </th>

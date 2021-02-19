@@ -10,9 +10,9 @@
 <div class="mt-4 sm:px-10 bg-white">
     <div class="wrap-container overflow: hidden; mb-4 p-3">
         <div class="container">
-            <h2 class="section-title">Add a New Habit</h2>
+            <h2 class="section-title">Create New Habit</h2>
             <p class="section-lead">
-              Start your 21 days habits from here
+              Start your habits from here
             </p>
             @if (session()->has('message'))
             <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md my-3" role="alert">
@@ -27,38 +27,36 @@
                 <div class="col">
                     <div class="card">
                         <div class="card-body">
-                            <div class="form-group">
-                                <label for="forTaskname" class="block text-gray-700 text-sm font-bold mb-2">Add your habit</label>
-                                <input type="text" class="form-control" id="forTaskname" wire:model="taskname">
-                                @error('taskname')
-                                    <span class="text-red-500">{{ $message }}</span>
-                                @enderror
-                            </div>
                             <div class="row">
-                                <div class="col-lg-9">
+                                <div class="col-lg-7">
+                                    <div class="form-group">
+                                        <label for="forTaskname" class="block text-gray-700 text-sm font-bold mb-2">Add new habit</label>
+                                        <input type="text" class="form-control" id="forTaskname" wire:model="taskname">
+                                        @error('taskname') <span class="text-red-500">{{ $message }}</span> @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="forReward" class="block text-gray-700 text-sm font-bold mb-2">Set your own reward</label>
+                                            <input type="text" class="form-control" id="forReward" wire:model="reward">
+                                            @error('reward') <span class="text-red-500">{{ $message }}</span> @enderror
+                                    </div>
                                     <div class="form-group">
                                         <label for="forDescription" class="block text-gray-700 text-sm font-bold mb-2">Describe your habit</label>
                                         <textarea class="form-control" id="forDescription" wire:model="description"></textarea>
                                         @error('description') <span class="text-red-500">{{ $message }}</span>@enderror
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
+                                <div class="col-lg-5">
+                                    <div class="form-group">
+                                        <label for="forStep" class="block text-gray-700 text-sm font-bold mb-2">Make some step to achive your habit</label>
+                                        <input type="text" class="form-control mb-2" id="forStep" wire:model="step">
+                                        <input type="text" class="form-control mb-2" id="forStep" wire:model="step">
+                                        <input type="text" class="form-control mb-2" id="forStep" wire:model="step">
+                                        <input type="text" class="form-control mb-2" id="forStep" wire:model="step">
+                                        <input type="text" class="form-control mb-2" id="forStep" wire:model="step">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="forReward" class="block text-gray-700 text-sm font-bold mb-2">Set your own reward</label>
-                                    <input type="text" class="form-control" id="forReward" wire:model="reward">
-                                    @error('reward')
-                                        <span class="text-red-500">{{ $message }}</span>
-                                    @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="forStep" class="block text-gray-700 text-sm font-bold mb-2">Make some step to achive new habit</label>
-                                    <input type="text" class="form-control" id="forStep" wire:model="step">
-                                    @error('step')
-                                        <span class="text-red-500">{{ $message }}</span>
-                                    @enderror
-                            </div>
+                            *The deadline is automatically set to 21 days from now
                         </div>
                         <div class="card-footer text-right">
                             <button wire:click="store()" class="btn btn-primary mr-1" type="submit">Submit</button>
