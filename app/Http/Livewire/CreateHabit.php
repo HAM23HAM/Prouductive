@@ -7,7 +7,7 @@ use Livewire\Component;
 
 class CreateHabit extends Component
 {
-    public $createhabit, $taskname, $description, $datentime, $reward, $step, $taskname_id;
+    public $createhabit, $taskname, $description, $datentime, $reward, $step1, $step2, $step3, $step4, $step5, $taskname_id;
 
     public function render()
     {
@@ -25,7 +25,11 @@ class CreateHabit extends Component
         $this->taskname = '';
         $this->description = '';
         $this->reward = '';
-        $this->step = '';
+        $this->step1 = '';
+        $this->step2 = '';
+        $this->step3 = '';
+        $this->step4 = '';
+        $this->step5 = '';
         $this->taskname_id = '';
     }
 
@@ -33,8 +37,6 @@ class CreateHabit extends Component
     {
         $this->validate([
             'taskname' => 'required|string',
-            'description' => 'required|string',
-            'reward' => 'required|string',
         ]);
 
         Todo::updateOrCreate(
@@ -44,7 +46,11 @@ class CreateHabit extends Component
                 'description' => $this->description,
                 'datentime' => Carbon::parse($this->datentime)->addDays(21),
                 'reward' => $this->reward,
-                'step' => $this->step,
+                'step1' => $this->step1,
+                'step2' => $this->step2,
+                'step3' => $this->step3,
+                'step4' => $this->step4,
+                'step5' => $this->step5,
             ]
         );
 

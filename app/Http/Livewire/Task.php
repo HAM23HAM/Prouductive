@@ -8,14 +8,12 @@ use Carbon\Carbon;
 
 class Task extends Component
 {
-    public $task, $taskname, $description, $datentime, $reward, $step, $taskname_id, $created_at, $today, $duedate;
+    public $task, $taskname, $description, $datentime, $reward, $step1, $step2, $step3, $step4, $step5, $taskname_id, $complete;
     public $isModal;
 
     public function render()
     {
         $this->task = Todo::orderBy('created_at', 'DESC')->get();
-        $this->today = Carbon::now();
-        $this->duedate = Carbon::parse($this->datentime)->diffForHumans();
         return view('livewire.task');
     }
 
@@ -23,26 +21,29 @@ class Task extends Component
     {
         $task = Todo::find($id);
         $task->delete();
-        session()->flash('message', $this->taskname . 'task completed');
+        session()->flash('message', $this->taskname . ' task completed');
     }
 
     public function delete($id)
     {
         $task = Todo::find($id);
         $task->delete();
-        session()->flash('message', $this->taskname . 'task deleted');
+        session()->flash('message', $this->taskname . ' task deleted');
     }
 
     public function detail($id)
     {
         $task = Todo::find($id);
         $this->taskname_id = $id;
-        $this->created_at = $task->created_at;
         $this->taskname = $task->task;
         $this->description = $task->description;
         $this->datentime = $task->datentime;
         $this->reward = $task->reward;
-        $this->step = $task->step;
+        $this->step1 = $task->step1;
+        $this->step2 = $task->step2;
+        $this->step3 = $task->step3;
+        $this->step4 = $task->step4;
+        $this->step5 = $task->step5;
         
 
         $this->openModal();

@@ -25,18 +25,31 @@
                                 <td style="font-size: 14px; font-weight:bold">&nbsp;:&nbsp; {{ $reward }}</td>
                             </tr>
                             <tr>
-                                <th style="font-size: 14px;">Next step </th>
-                                <td style="font-size: 14px; font-weight:bold;">&nbsp;:&nbsp; <span style="color: #FFBD55;">{{ $step }}</span></td>
+                                <th style="font-size: 14px;">Steps </th>
+                                <td style="font-size: 14px; font-weight:bold;">&nbsp;:&nbsp; <span style="color: #FFBD55;">{{ $step1 }}</span></td>
+                            </tr>
+                            <tr>
+                                <th style="font-size: 14px;"></th>
+                                <td style="font-size: 14px; font-weight:bold;">&nbsp; &nbsp; <span style="color: #FFBD55;">{{ $step2 }}</span></td>
+                            </tr>
+                            <tr>
+                                <th style="font-size: 14px;"></th>
+                                <td style="font-size: 14px; font-weight:bold;">&nbsp; &nbsp; <span style="color: #FFBD55;">{{ $step3 }}</span></td>
+                            </tr>
+                            <tr>
+                                <th style="font-size: 14px;"></th>
+                                <td style="font-size: 14px; font-weight:bold;">&nbsp; &nbsp; <span style="color: #FFBD55;">{{ $step4 }}</span></td>
+                            </tr>
+                            <tr>
+                                <th style="font-size: 14px;"></th>
+                                <td style="font-size: 14px; font-weight:bold;">&nbsp; &nbsp; <span style="color: #FFBD55;">{{ $step5 }}</span></td>
                             </tr>
                         </table>
-                        <div class="progress mt-2" style="width: 100%;">
-                            <div class="progress-bar" role="progressbar" style="width: 50%; background-color: #FFBD55;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> 
-                        </div>
                     </div>
                     <div class="modal-footer">
-                        <a">
+                        <!-- <a">
                             <button wire:click="edit({{ $row->id }})" type="button" class="btn btn-primary">Edit</button>
-                        </a>
+                        </a> -->
                         <a>
                             <button wire:click="delete({{ $row->id }})" type="button" class="btn btn-danger">Delete</button>
                         </a>

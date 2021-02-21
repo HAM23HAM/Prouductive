@@ -47,13 +47,9 @@
                                         <th style="font-size: 16px;">Reward </th>
                                         <td style="font-size: 16px; font-weight:bold">&nbsp;:&nbsp; {{ $row->reward }}</td>
                                     </tr>
-                                    <!-- <tr>
-                                        <th style="font-size: 16px;">Next step </th>
-                                        <td style="font-size: 16px; font-weight:bold;">&nbsp;:&nbsp; <span style="color: #FFBD55;">{{ $row->step }}</span></td>
-                                    </tr> -->
                                 </table>
                                 <div class="progress mt-2" style="width: 100%;">
-                                    <div class="progress-bar" role="progressbar" style="width: 50%; background-color: #FFBD55;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div> 
+                                    <div id="progressbar" class="progress-bar" role="progressbar" style="width: 100%; background-color: #FFBD55;" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5"></div> 
                                 </div>
                             </div>
 
@@ -73,6 +69,7 @@
                                 @include('livewire.detail')
                             @endif
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -81,5 +78,4 @@
         @endforelse
         </div>
     </div>
-    
 </div>

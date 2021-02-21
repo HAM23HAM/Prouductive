@@ -34,35 +34,34 @@
                                             <div class="form-group">
                                                 <label for="forTaskname" class="block text-gray-700 text-sm font-bold mb-2">Add new task</label>
                                                 <input type="text" class="form-control" id="forTaskname" wire:model="taskname">
-                                                @error('taskname') <span class="text-red-500">{{ $message }}</span> @enderror
+                                                @error('taskname') <span class="text-red-500"> required </span> @enderror
                                             </div>
                                         </div>
                                         <div class="col-lg-3">
                                             <div class="form-group">
                                                 <label for="forDatentime" class="block text-gray-700 text-sm font-bold mb-2">Set your deadline</label>
                                                 <input type="datetime-local" class="form-control" id="forDatentime" wire:model="datentime">
+                                                @error('datentime') <span class="text-red-500"> required </span> @enderror
                                             </div>  
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="forReward" class="block text-gray-700 text-sm font-bold mb-2">Set your own reward</label>
-                                            <input type="text" class="form-control" id="forReward" wire:model="reward">
-                                            @error('reward') <span class="text-red-500">{{ $message }}</span> @enderror
+                                        <input type="text" class="form-control" id="forReward" wire:model="reward">
                                     </div>
                                     <div class="form-group">
                                         <label for="forDescription" class="block text-gray-700 text-sm font-bold mb-2">Describe your task</label>
                                         <textarea class="form-control" id="forDescription" wire:model="description"></textarea>
-                                        @error('description') <span class="text-red-500">{{ $message }}</span>@enderror
                                     </div>
                                 </div>
                                 <div class="col-lg-5">
                                     <div class="form-group">
                                         <label for="forStep" class="block text-gray-700 text-sm font-bold mb-2">Make some step to complete your task</label>
-                                        <input type="text" class="form-control mb-2" id="forStep" wire:model="step">
-                                        <input type="text" class="form-control mb-2" id="forStep" wire:model="step">
-                                        <input type="text" class="form-control mb-2" id="forStep" wire:model="step">
-                                        <input type="text" class="form-control mb-2" id="forStep" wire:model="step">
-                                        <input type="text" class="form-control mb-2" id="forStep" wire:model="step">
+                                        <input type="text" class="form-control mb-2" id="forStep1" wire:model="step1">
+                                        <input type="text" class="form-control mb-2" id="forStep2" wire:model="step2">
+                                        <input type="text" class="form-control mb-2" id="forStep3" wire:model="step3">
+                                        <input type="text" class="form-control mb-2" id="forStep4" wire:model="step4">
+                                        <input type="text" class="form-control mb-2" id="forStep5" wire:model="step5">
                                     </div>
                                 </div>
                             </div>

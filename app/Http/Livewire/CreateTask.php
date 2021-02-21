@@ -7,7 +7,7 @@ use App\Models\Todo;
 
 class CreateTask extends Component
 {
-    public $createtask, $taskname, $description, $datentime, $reward, $step, $taskname_id;
+    public $createtask, $taskname, $description, $datentime, $reward, $step1, $step2, $step3, $step4, $step5, $taskname_id;
     
     public function render()
     {
@@ -26,7 +26,11 @@ class CreateTask extends Component
         $this->description = '';
         $this->datentime = '';
         $this->reward = '';
-        $this->step = '';
+        $this->step1 = '';
+        $this->step2 = '';
+        $this->step3 = '';
+        $this->step4 = '';
+        $this->step5 = '';
         $this->taskname_id = '';
     }
 
@@ -34,9 +38,7 @@ class CreateTask extends Component
     {
         $this->validate([
             'taskname' => 'required|string',
-            'description' => 'required|string',
             'datentime' => 'required',
-            'reward' => 'required|string',
         ]);
 
         Todo::updateOrCreate(
@@ -46,7 +48,11 @@ class CreateTask extends Component
                 'description' => $this->description,
                 'datentime' => $this->datentime,
                 'reward' => $this->reward,
-                'step' => $this->step,
+                'step1' => $this->step1,
+                'step2' => $this->step2,
+                'step3' => $this->step3,
+                'step4' => $this->step4,
+                'step5' => $this->step5,
             ]
         );
 
